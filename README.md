@@ -1,6 +1,6 @@
 # Homebrew Formulas
 
-Homebrew formulas for my public tools.
+[Homebrew](https://brew.sh/) formulas for my public tools.
 
 ## Installation
 To install any formula from this repository you can do:
