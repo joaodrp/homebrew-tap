@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/joaodrp/homebrew-tap.svg?branch=master)](https://travis-ci.org/joaodrp/homebrew-tap)
+
 # Homebrew Formulas
 
 [Homebrew](https://brew.sh/) formulas for my public tools.
