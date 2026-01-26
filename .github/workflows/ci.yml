@@ -11,6 +11,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Tap local repo
+        run: brew tap joaodrp/tap .
       - name: Audit casks
         run: |
           for cask in Casks/*.rb; do
