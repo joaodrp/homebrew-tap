@@ -12,4 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Audit casks
-        run: brew audit --cask Casks/*.rb
+        run: |
+          for cask in Casks/*.rb; do
+            brew audit --cask "$(basename "$cask" .rb)"
+          done
