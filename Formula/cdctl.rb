@@ -1,20 +1,20 @@
 class Cdctl < Formula
   desc "CLI for the Control D REST API (not the ctrld DNS daemon)"
   homepage "https://github.com/joaodrp/controld-cli"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.0/controld-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "f19874ab5cacee0f4393f8d49fed67ca6a630ee92c671774a8c4890bc687724c"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "7c3566174be3c878e68c3199d0a1f27c170e20efd0149d7ac227c43ecf4b2dc3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.0/controld-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "5906db7aee1a07ae820cef1a648f21a580f57cbbdc88f9aa5699a32903ad89fe"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "b009aba5d7a1f2c312bae495bb5018866c590fbd452244307fd793e304934b04"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.0/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "c027039e2dcc205256ada5c8a7e4c352b4a5b592875deec9f65f96e65aa87120"
+    url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "5d9f8118a982eb9363cf1ede332447b52e0a950e83b3e1a2b02ff41af8d07357"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
