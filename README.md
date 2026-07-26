@@ -4,10 +4,10 @@
 
 [Homebrew](https://brew.sh/) formulae and casks for my public tools.
 
-| | |
-| --- | --- |
-| [cdctl](https://github.com/joaodrp/controld-cli) | CLI for the Control D REST API |
-| [gelf-pretty](https://github.com/joaodrp/gelf-pretty) | Pretty-print GELF log lines |
+| Tool | What it does | Type |
+| --- | --- | --- |
+| [cdctl](https://github.com/joaodrp/controld-cli) | CLI for the Control D REST API | formula |
+| [gelf-pretty](https://github.com/joaodrp/gelf-pretty) | Pretty-print GELF log lines | cask |
 
 ## Installation
 
