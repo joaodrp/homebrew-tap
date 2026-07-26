@@ -1,30 +1,39 @@
 class Cdctl < Formula
   desc "CLI for the Control D REST API (not the ctrld DNS daemon)"
   homepage "https://github.com/joaodrp/controld-cli"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "7c3566174be3c878e68c3199d0a1f27c170e20efd0149d7ac227c43ecf4b2dc3"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "72f53bba7febfce387c44b413b18928aa4656e4170cf50e5d7d3a451efe9aca6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "b009aba5d7a1f2c312bae495bb5018866c590fbd452244307fd793e304934b04"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "6781c13957f808a40ca22e9695d8822d26f0a093f32593844d1242e0d687f166"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.1/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "5d9f8118a982eb9363cf1ede332447b52e0a950e83b3e1a2b02ff41af8d07357"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "1d60ae2ef83613623f0e08ceaa6192a545daa64fb9337e4a893ae89c6d304a42"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f5c927207d89888eb5539c7dab9c63248f3f5dbacf06db3852ca53cd1bb6a047"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":              {},
-    "x86_64-apple-darwin":               {},
-    "x86_64-pc-windows-gnu":             {},
-    "x86_64-unknown-linux-gnu":          {},
-    "x86_64-unknown-linux-musl-dynamic": {},
-    "x86_64-unknown-linux-musl-static":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
@@ -45,6 +54,7 @@ class Cdctl < Formula
   def install
     bin.install "cdctl" if OS.mac? && Hardware::CPU.arm?
     bin.install "cdctl" if OS.mac? && Hardware::CPU.intel?
+    bin.install "cdctl" if OS.linux? && Hardware::CPU.arm?
     bin.install "cdctl" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
