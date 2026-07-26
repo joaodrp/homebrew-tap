@@ -17,6 +17,11 @@ jobs:
       # is trusted, which fails the audit below.
       - name: Trust the tap
         run: brew trust joaodrp/tap
+      - name: Audit formulae
+        run: |
+          for formula in Formula/*.rb; do
+            brew audit --formula "$(basename "$formula" .rb)"
+          done
       - name: Audit casks
         run: |
           for cask in Casks/*.rb; do
