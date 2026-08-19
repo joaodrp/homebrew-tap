@@ -1,25 +1,25 @@
 class Cdctl < Formula
   desc "CLI for the Control D REST API (not the ctrld DNS daemon)"
   homepage "https://github.com/joaodrp/controld-cli"
-  version "0.1.2"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "72f53bba7febfce387c44b413b18928aa4656e4170cf50e5d7d3a451efe9aca6"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.2.0/controld-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "d13a125cea8f0592b523ce107ed7560ff6a9d248c1e2bb4fca515229b8e0f53b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "6781c13957f808a40ca22e9695d8822d26f0a093f32593844d1242e0d687f166"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.2.0/controld-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "c56a7eb609012884348ddec160b5b22b7818bfd4ab4498df13860059fa797746"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1d60ae2ef83613623f0e08ceaa6192a545daa64fb9337e4a893ae89c6d304a42"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.2.0/controld-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a3356d67138fe281fff0125474deb39978963bc69fb708ce20d0755c7c2e7a56"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.1.2/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "f5c927207d89888eb5539c7dab9c63248f3f5dbacf06db3852ca53cd1bb6a047"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.2.0/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f1c0f32776fcb272c88bd20bdb184137aa891d9807cb3ace580dc32f3c7851c6"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -52,10 +52,18 @@ class Cdctl < Formula
   end
 
   def install
-    bin.install "cdctl" if OS.mac? && Hardware::CPU.arm?
-    bin.install "cdctl" if OS.mac? && Hardware::CPU.intel?
-    bin.install "cdctl" if OS.linux? && Hardware::CPU.arm?
-    bin.install "cdctl" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "cdctl"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "cdctl"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "cdctl"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "cdctl"
+    end
 
     install_binary_aliases!
 
