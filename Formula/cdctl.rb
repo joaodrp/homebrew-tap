@@ -1,25 +1,25 @@
 class Cdctl < Formula
   desc "CLI for the Control D REST API (not the ctrld DNS daemon)"
   homepage "https://github.com/joaodrp/controld-cli"
-  version "0.3.0"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.3.0/controld-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "84d785be82a29036d09fc094ff4e63a3313b22786a58ca0063a091d4db6724ea"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.4.0/controld-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "f4e838a227b16a6b98fd8cf20d5dd567507411761908d91fb44c6fbe6e47388d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.3.0/controld-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "05b987fc7b5caefbebfe797fec5506a64d7a3657cbc42e92c21437708cd22bd2"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.4.0/controld-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "7c9b77761ba129f0d9a136dcd8e622b71361294b4bc4c665a932b95f4184bb67"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.3.0/controld-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f519d6f176375763114736bed6ffbe9aed4cad329e5b19d1922699d68c5142f7"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.4.0/controld-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ecb8f722af69095c3b203cb19cf1854adf8d5b0594549bdcf57e89eca03de432"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joaodrp/controld-cli/releases/download/v0.3.0/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e5469b2e74374b5a499a729dcdd12a93bfc920c33984b63463fca4aa94b682d8"
+      url "https://github.com/joaodrp/controld-cli/releases/download/v0.4.0/controld-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "06bb0bc320df554f73d644d4acba759c85763915bc23f71e8490ad67821ce8a8"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
